@@ -8,7 +8,7 @@ from django.forms import CharField, PasswordInput
 class PasswordChangeCustomForm(PasswordChangeForm):
         error_css_class = 'has-error'
         error_messages = {'password_incorrect':
-                  "Το παλιό συνθηματικό δεν είναι σωστό. Προσπαθείστε   ξανά."}
+                  "The old password is incorrect. Please try again"}
         old_password = CharField(required=True, label='Old password',
                       widget=PasswordInput(attrs={
                         'class': 'form-control'}),
@@ -25,3 +25,9 @@ class PasswordChangeCustomForm(PasswordChangeForm):
                         'class': 'form-control'}),
                       error_messages={
                         'required': 'The password cannot be empty'})
+        
+        email = CharField(required=True, label='email',
+                      widget=PasswordInput(attrs={
+                        'class': 'form-control'}),
+                      error_messages={
+                        'required': 'The email cannot be empty'})

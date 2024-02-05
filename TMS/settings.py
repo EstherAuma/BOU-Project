@@ -137,3 +137,11 @@ AUTH_USER_MODEL = 'transportApp.StaffUser'
 
 
 LOGIN_REDIRECT_URL = 'change-password'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # or the appropriate port for your SMTP server
+EMAIL_USE_TLS = True  # or False if not using TLS
+EMAIL_HOST_USER = 'estheraumaego@gmail.com'
+EMAIL_HOST_PASSWORD = 'Esther@2023'
