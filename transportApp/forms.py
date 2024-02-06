@@ -26,8 +26,9 @@ class PasswordChangeCustomForm(PasswordChangeForm):
                       error_messages={
                         'required': 'The password cannot be empty'})
         
-        email = CharField(required=True, label='email',
+        
+        email = CharField(required=True, label='Email',
                       widget=PasswordInput(attrs={
                         'class': 'form-control'}),
                       error_messages={
-                        'required': 'The email cannot be empty'})
+                        'required': 'email cannot be empty'})
