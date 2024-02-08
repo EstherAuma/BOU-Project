@@ -22,22 +22,6 @@ def user_details(request):
 
     return render(request, 'user-details.html', context)
 
-
-# @login_required
-# def change_password(request):
-
-#     if request.method == 'POST':
-#         form = PasswordChangeCustomForm(request.user, request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             update_session_auth_hash(request, user) 
-
-#             return redirect('login')  
-#     else:
-#         form = PasswordChangeCustomForm(request.user)
-#     return render(request, 'change-password.html', {'form': form})
-    
-
 def index(request):
     if request.method == 'POST':
         message = request.POST['message']
@@ -53,8 +37,6 @@ def index(request):
         )
 
     return render(request,'index.html')
-
-
 
 
 @login_required
@@ -75,7 +57,7 @@ def change_password(request):
                 fail_silently=False
             )
         
-            return redirect('login')  
+            return redirect('login') 
     else:
         form = PasswordChangeCustomForm(request.user)
     return render(request, 'change-password.html', {'form': form})
